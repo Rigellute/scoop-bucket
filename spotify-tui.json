@@ -1,12 +1,12 @@
 {
   "homepage": "https://github.com/Rigellute/spotify-tui",
   "description": "Spotify for the terminal",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/Rigellute/spotify-tui/releases/download/v0.16.0/spotify-tui-windows.tar.gz",
-      "hash": "71258b9ddc5cf0fc51f7206f5f2b63ccbeb9defa663fdaa60970c2c1667a165c"
+      "url": "https://github.com/Rigellute/spotify-tui/releases/download/v0.17.0/spotify-tui-windows.tar.gz",
+      "hash": "389ebb897503d1ec1bcc010bd98bf059a9aa3b9f4c0a9810b75e1d9a8e58df6a"
     }
   },
   "bin": "spt.exe",
@@ -20,3 +20,4 @@
     }
   }
 }
+
