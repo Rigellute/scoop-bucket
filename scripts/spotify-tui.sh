@@ -22,7 +22,7 @@ fi
 
 SHA256SUM=$(curl -sLS --fail-early "${TARGET}" | shasum -a 256 -b | cut -f1 -d\ )
 
-cat <<MANIFEST  
+cat > spotify-tui.json <<MANIFEST  
 {
   "homepage": "https://github.com/Rigellute/spotify-tui",
   "description": "Spotify for the terminal",
