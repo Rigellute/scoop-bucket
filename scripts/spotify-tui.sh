@@ -20,7 +20,10 @@ if [ $CHECKVER_CODE -ne 302 ]; then
 	exit 3
 fi
 
-SHA256SUM=$(curl -sLS --fail-early "${TARGET}" | shasum -a 256 -b | cut -f1 -d\ )
+SHA_URL="https://github.com/Rigellute/spotify-tui/releases/download/v${VERSION}/spotify-tui-windows.sha256"
+
+echo "Fetching sha256"
+SHA256SUM=$(curl -sLS "${SHA_URL}" | cut -f1 -d\ "")
 
 cat > spotify-tui.json <<MANIFEST  
 {
