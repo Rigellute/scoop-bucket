@@ -1,13 +1,13 @@
-# scoop
-
-Install `spotify-tui`
+# Install `spotify-tui`
 
 ```
 scoop bucket add rigellute-scoop-bucket https://github.com/Rigellute/scoop-bucket
 scoop install spotify-tui
 ```
 
-## Update the Manifest
+# Development
+
+### Update the Manifest
 
 Run
 
