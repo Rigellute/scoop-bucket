@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/Rigellute/spotify-tui/releases/download/v0.18.0/spotify-tui-windows.tar.gz",
-      "hash": "5eb9ee319cdb6b65bb70f2b05652a9c2a3bc746a7d4d322b95e6a95ea7a32eb5"
+      "hash": "5eb9ee319cdb6b65bb70f2b05652a9c2a3bc746a7d4d322b95e6a95ea7a32eb5"
     }
   },
   "bin": "spt.exe",
