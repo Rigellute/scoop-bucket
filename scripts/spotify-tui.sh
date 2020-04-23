@@ -23,6 +23,7 @@ fi
 SHA_URL="https://github.com/Rigellute/spotify-tui/releases/download/v${VERSION}/spotify-tui-windows.sha256"
 
 echo "Fetching sha256"
+
 SHA256SUM=$(curl -sLS "${SHA_URL}" | cut -c1-64)
 
 cat > spotify-tui.json <<MANIFEST  
