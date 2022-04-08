@@ -1,24 +1,27 @@
 #!/bin/sh
-VERSION=$1
-
-# check presence of version
-if [ -z $VERSION ]; then
-	echo "Missing argument with version" >&2
-	exit 1
-fi 
 
 # check presence of tooling
+
 SHASUM=`which shasum`
 CURL=`which curl`
-[ -n ${SHASUM} ] && [ -n ${CURL} ] || exit 2
+[ -n ${SHASUM} ] && [ -n ${CURL} ] || exit 1
+
+# get latest version 
+
+URL="https://api.github.com/repos/Rigellute/spotify-tui/releases/latest"
+VERSION=`curl -sL ${URL} | grep -Po '"tag_name": "v\K.*?(?=")'`
+
+# check if it exists for windows
 
 TARGET="https://github.com/Rigellute/spotify-tui/releases/download/v${VERSION}/spotify-tui-windows.tar.gz"
 
 CHECKVER_CODE=`curl -X HEAD -m 3 -sfw "%{response_code}" ${TARGET}`
 if [ $CHECKVER_CODE -ne 302 ]; then
-	echo "Version ${VERSION} does not exist" >&2
-	exit 3
+	echo "Latest version ${VERSION} does not exist for windows." >&2
+	exit 2
 fi
+
+echo "Latest version is v$VERSION"
 
 SHA_URL="https://github.com/Rigellute/spotify-tui/releases/download/v${VERSION}/spotify-tui-windows.sha256"
 
@@ -54,3 +57,5 @@ cat > spotify-tui.json <<MANIFEST
 }
 
 MANIFEST
+
+echo "Updated spotify-tui.json"
